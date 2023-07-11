@@ -1,4 +1,4 @@
-package com.kkh.springframe.dao;
+package com.intheeast.springframe.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,8 +13,8 @@ import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-import com.kkh.springframe.domain.Level;
-import com.kkh.springframe.domain.User;
+import com.intheeast.springframe.domain.Level;
+import com.intheeast.springframe.domain.User;
 
 
 
