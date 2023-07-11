@@ -1,23 +1,14 @@
-package com.intheeast.springframe.service;
+package com.kkh.springframe.service;
 
-import java.io.UnsupportedEncodingException;
+import static com.kkh.springframe.service.UserService.MIN_LOGCOUNT_FOR_SILVER;
+import static com.kkh.springframe.service.UserService.MIN_RECCOMEND_FOR_GOLD;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.Properties;
-
-import javax.mail.Authenticator;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeUtility;
-import javax.sql.DataSource;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,23 +17,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.PlatformTransactionManager;
 
-//import org.springframework.mail.MailSender;
-
-import com.intheeast.springframe.dao.UserDao;
-import com.intheeast.springframe.domain.Level;
-import com.intheeast.springframe.domain.User;
-
-import static com.intheeast.springframe.service.UserService.MIN_LOGCOUNT_FOR_SILVER;
-import static com.intheeast.springframe.service.UserService.MIN_RECCOMEND_FOR_GOLD;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import com.kkh.springframe.dao.UserDao;
+import com.kkh.springframe.domain.Level;
+import com.kkh.springframe.domain.User;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {TestServiceFactory.class})
@@ -58,11 +40,11 @@ public class UserServiceTest {
 	public void setUp() {	
 		
 		users = Arrays.asList(
-				new User("bumjin", "박범진", "p1", "intheeast0305@gmail.com", Level.BASIC, MIN_LOGCOUNT_FOR_SILVER-1, 0),
+				new User("bumjin", "김규현", "p1", "kkh30123@gmail.com", Level.BASIC, MIN_LOGCOUNT_FOR_SILVER-1, 0),
 				new User("joytouch", "김규현", "p2", "kkh30123@gmail.com", Level.BASIC, MIN_LOGCOUNT_FOR_SILVER, 0),
-				new User("erwins", "신승한", "p3", "intheeast1009@gmail.com", Level.SILVER, 60, MIN_RECCOMEND_FOR_GOLD-1),
-				new User("madnite1", "이정희", "p4", "jhcode33@gmail.com", Level.SILVER, 60, MIN_RECCOMEND_FOR_GOLD),
-				new User("green", "몰라요", "p5", "intheeast@gmail.com", Level.GOLD, 100, Integer.MAX_VALUE)
+				new User("erwins", "김규현", "p3", "kkh30123@gmail.com", Level.SILVER, 60, MIN_RECCOMEND_FOR_GOLD-1),
+				new User("madnite1", "김규현", "p4", "kkh30123@gmail.com", Level.SILVER, 60, MIN_RECCOMEND_FOR_GOLD),
+				new User("green", "김규현", "p5", "kkh30123@gmail.com", Level.GOLD, 100, Integer.MAX_VALUE)
 				);
 	}
 	
@@ -185,11 +167,11 @@ public class UserServiceTest {
 		
 		String host = "smtp.gmail.com";
         int port = 587; // TLS : 587, SSL : 465
-        String username = "swseokitec@gmail.com";  // 발신자 Gmail 계정
-        String password = "kmwmvsbajccozsxc";  // 발신자 Gmail 계정 비밀번호
+        String username = "kkh30123@gmail.com";  // 발신자 Gmail 계정
+        String password = "tibkfyhgagbqdcoo";  // 발신자 Gmail 계정 비밀번호
 
         // 수신자 이메일 주소
-        String toAddress = "intheeast0305@gmail.com";
+        String toAddress = "kkh30123@naver.com";
 
         // 메일 속성 설정
         Properties props = new Properties();

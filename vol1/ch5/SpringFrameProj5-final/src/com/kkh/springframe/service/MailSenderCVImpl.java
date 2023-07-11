@@ -1,4 +1,4 @@
-package com.intheeast.springframe.service;
+package com.kkh.springframe.service;
 
 import java.util.Properties;
 

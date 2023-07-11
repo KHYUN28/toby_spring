@@ -1,4 +1,4 @@
-package com.intheeast.springframe.service;
+package com.kkh.springframe.service;
 
 import java.util.Properties;
 
@@ -10,7 +10,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 
-import com.intheeast.springframe.dao.UserDaoJdbc;
+import com.kkh.springframe.dao.UserDaoJdbc;
 
 @Configuration
 public class TestServiceFactory {
@@ -60,8 +60,8 @@ public class TestServiceFactory {
 		
 		mailSenderImpl.setHost("smtp.gmail.com");
 		mailSenderImpl.setPort(587); // TLS : 587, SSL : 465
-		mailSenderImpl.setUsername("swseokitec@gmail.com"); 
-		mailSenderImpl.setPassword("kmwmvsbajccozsxc");
+		mailSenderImpl.setUsername("kkh30123@gmail.com"); 
+		mailSenderImpl.setPassword("tibkfyhgagbqdcoo");
 		return mailSenderImpl;
 	}
 	
