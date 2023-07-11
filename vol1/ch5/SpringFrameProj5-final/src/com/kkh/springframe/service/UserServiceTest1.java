@@ -42,7 +42,7 @@ import com.kkh.springframe.domain.User;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {TestServiceFactory.class})
-public class UserServiceTest {
+public class UserServiceTest1 {
 	@Autowired 	UserService userService;	
 	@Autowired UserDao userDao;	
 	@Autowired MailSender mailSender; 
@@ -91,19 +91,19 @@ public class UserServiceTest {
 		
 		String host = "smtp.gmail.com";
         int port = 587; // TLS : 587, SSL : 465
-//        String username = "kkh30123@gmail.com";  // 발신자 Gmail 계정
-//        String password = "yiyseazfabilncqf";  // 발신자 Gmail 계정 비밀번호
+        String username = "kkh30123@gmail.com";  // 발신자 Gmail 계정
+        String password = "yiyseazfabilncqf";  // 발신자 Gmail 계정 비밀번호
 
         // 수신자 이메일 주소
         String toAddress = "kkh30123@naver.com";
 
         // 메일 속성 설정
         Properties props = new Properties();
-//        props.put("mail.smtp.auth", "true");
-//        props.put("mail.smtp.starttls.enable", "true");
-//        props.put("mail.smtp.host", host);
-//        props.put("mail.smtp.port", port);
-        
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", host);
+        props.put("mail.smtp.port", port);
+
         // 인증 객체 생성
         Authenticator authenticator = new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {

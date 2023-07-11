@@ -70,8 +70,8 @@ public class UserService {
 		SimpleMailMessage mailMessage = new SimpleMailMessage();
 		mailMessage.setTo(user.getEmail());
 		mailMessage.setFrom("useradmin@ksug.org");
-		mailMessage.setSubject("Upgrade �ȳ�");
-		mailMessage.setText("����ڴ��� ����� " + user.getLevel().name());
+		mailMessage.setSubject("Upgrade 안내");
+		mailMessage.setText("사용자 레벨은 " + user.getLevel().name());
 		
 		this.mailSender.send(mailMessage);
 	}

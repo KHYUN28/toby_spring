@@ -13,7 +13,7 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import com.kkh.springframe.dao.UserDaoJdbc;
 
 @Configuration
-public class TestServiceFactory {
+public class TestServiceFactory1 {
 	@Bean
 	public DataSource dataSource() {
 		
@@ -62,12 +62,9 @@ public class TestServiceFactory {
 	
 	@Bean
 	public Properties prop() {
-		
 		Properties props = new Properties();
-		props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", host);
-        props.put("mail.smtp.port", port);
+	    props.put("mail.smtp.auth", "true");
+	    props.put("mail.smtp.starttls.enable", "true");
 	    return props;
 	}
 	
