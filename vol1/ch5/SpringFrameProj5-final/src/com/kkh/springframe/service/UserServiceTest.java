@@ -29,6 +29,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -87,13 +88,17 @@ public class UserServiceTest {
 	@Test
 	public void sendEmailToGmail() throws UnsupportedEncodingException {
 		//JavaMailSenderImpl sender = new JavaMailSenderImpl();
+		
+		
 		SimpleMailMessage emailMessage = new SimpleMailMessage();
 		
-		String host = "smtp.gmail.com";
-        int port = 587; // TLS : 587, SSL : 465
+//		String host = "smtp.gmail.com";
+//        int port = 587; // TLS : 587, SSL : 465
 //        String username = "kkh30123@gmail.com";  // 발신자 Gmail 계정
 //        String password = "yiyseazfabilncqf";  // 발신자 Gmail 계정 비밀번호
-
+        
+        JavaMailSenderImpl javamailsenderimpl;
+        
         // 수신자 이메일 주소
         String toAddress = "kkh30123@naver.com";
 
@@ -101,8 +106,8 @@ public class UserServiceTest {
         Properties props = new Properties();
 //        props.put("mail.smtp.auth", "true");
 //        props.put("mail.smtp.starttls.enable", "true");
-//        props.put("mail.smtp.host", host);
-//        props.put("mail.smtp.port", port);
+        props.put("mail.smtp.host", host);
+        props.put("mail.smtp.port", port);
         
         // 인증 객체 생성
         Authenticator authenticator = new Authenticator() {

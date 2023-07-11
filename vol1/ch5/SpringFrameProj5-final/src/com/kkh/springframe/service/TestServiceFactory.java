@@ -40,7 +40,7 @@ public class TestServiceFactory {
 		userService.setUserDao(userDao());
 		userService.setTransactionManager(transactionManager());
 		//<property name="mailSender" ref="mailSender" />
-		userService.setMailSender(senderimpl());
+		userService.setMailSender(javamailsenderimpl());
 		//userService.setDataSource(dataSource());
 		return userService;
 	}
@@ -48,28 +48,29 @@ public class TestServiceFactory {
 	@Bean
 	public DummyMailSender mailSender() {
 		DummyMailSender dummyMailSender = new DummyMailSender();
+		//dummyMailSender dummyMailsender(DummyMailSender());
 		return dummyMailSender;
 	}
 	
 	@Bean
-	public JavaMailSenderImpl senderimpl() {
+	public JavaMailSenderImpl javamailsenderimpl() {
 		
-		JavaMailSenderImpl sender = new JavaMailSenderImpl();
-		sender.setHost("smtp.gmail.com");
-	    sender.setPort(587); // TLS: 587, SSL: 465
-		sender.setUsername("kkh30123@gmail.com"); // 발신자 Gmail 계정
-	    sender.setPassword("cbwjhdfjgwovuzvs"); // 발신자 Gmail 계정 비밀번호
-		return sender;
+		JavaMailSenderImpl mailsender = new JavaMailSenderImpl();
+		
+		mailsender.setHost("smtp.gmail.com");
+		mailsender.setPort(587); // TLS: 587, SSL: 465
+		mailsender.setUsername("kkh30123@gmail.com"); // 발신자 Gmail 계정
+		mailsender.setPassword("cbwjhdfjgwovuzvs"); // 발신자 Gmail 계정 비밀번호
+		return mailsender;
 	}
 	
 	@Bean
-	public Properties prop() {
+	public Properties properties() {
 		
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", host);
-        props.put("mail.smtp.port", port);
+
 	    return props;
 	}
 	
