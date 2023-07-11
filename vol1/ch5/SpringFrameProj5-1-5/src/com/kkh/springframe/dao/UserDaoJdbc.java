@@ -1,4 +1,4 @@
-package com.intheeast.springframe.dao;
+package com.kkh.springframe.dao;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -18,8 +18,8 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator;
 import org.springframework.jdbc.support.SQLExceptionTranslator;
 
-import com.intheeast.springframe.domain.Level;
-import com.intheeast.springframe.domain.User;
+import com.kkh.springframe.domain.Level;
+import com.kkh.springframe.domain.User;
 
 
 

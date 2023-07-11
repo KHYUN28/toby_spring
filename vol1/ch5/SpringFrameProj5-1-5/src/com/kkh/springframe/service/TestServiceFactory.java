@@ -1,4 +1,4 @@
-package com.intheeast.springframe.dao;
+package com.kkh.springframe.service;
 
 import javax.sql.DataSource;
 
@@ -6,9 +6,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
+import com.kkh.springframe.dao.UserDaoJdbc;
+
 @Configuration
-public class TestDaoFactory {
-	
+public class TestServiceFactory {
 	@Bean
 	public DataSource dataSource() {
 		
@@ -28,6 +29,11 @@ public class TestDaoFactory {
 		userDaoJdbc.setDataSource(dataSource());
 		return userDaoJdbc;
 	}
+	
+	@Bean
+	public UserService userService() {
+		UserService userService = new UserService();
+		userService.setUserDao(userDao());
+		return userService;
+	}
 }
-
-

@@ -1,10 +1,10 @@
-package com.intheeast.springframe.service;
+package com.kkh.springframe.service;
 
 import java.util.List;
 
-import com.intheeast.springframe.dao.UserDao;
-import com.intheeast.springframe.domain.Level;
-import com.intheeast.springframe.domain.User;
+import com.kkh.springframe.dao.UserDao;
+import com.kkh.springframe.domain.Level;
+import com.kkh.springframe.domain.User;
 
 
 public class UserService {
