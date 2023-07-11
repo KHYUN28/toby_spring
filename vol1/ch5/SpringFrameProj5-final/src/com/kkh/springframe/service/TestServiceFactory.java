@@ -55,6 +55,8 @@ public class TestServiceFactory {
 	public JavaMailSenderImpl senderimpl() {
 		
 		JavaMailSenderImpl sender = new JavaMailSenderImpl();
+		sender.setHost("smtp.gmail.com");
+	    sender.setPort(587); // TLS: 587, SSL: 465
 		sender.setUsername("kkh30123@gmail.com"); // 발신자 Gmail 계정
 	    sender.setPassword("cbwjhdfjgwovuzvs"); // 발신자 Gmail 계정 비밀번호
 		return sender;
