@@ -1,4 +1,4 @@
-package com.intheeast.springframe.service;
+package com.kkh.springframe.service;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
-import com.intheeast.springframe.dao.UserDao;
-import com.intheeast.springframe.domain.Level;
-import com.intheeast.springframe.domain.User;
+import com.kkh.springframe.dao.UserDao;
+import com.kkh.springframe.domain.Level;
+import com.kkh.springframe.domain.User;
 
 public class UserService {
 	public static final int MIN_LOGCOUNT_FOR_SILVER = 50;

@@ -1,4 +1,4 @@
-package com.intheeast.springframe.service;
+package com.kkh.springframe.service;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -35,12 +35,12 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 //import org.springframework.mail.MailSender;
 
-import com.intheeast.springframe.dao.UserDao;
-import com.intheeast.springframe.domain.Level;
-import com.intheeast.springframe.domain.User;
+import com.kkh.springframe.dao.UserDao;
+import com.kkh.springframe.domain.Level;
+import com.kkh.springframe.domain.User;
 
-import static com.intheeast.springframe.service.UserService.MIN_LOGCOUNT_FOR_SILVER;
-import static com.intheeast.springframe.service.UserService.MIN_RECCOMEND_FOR_GOLD;
+import static com.kkh.springframe.service.UserService.MIN_LOGCOUNT_FOR_SILVER;
+import static com.kkh.springframe.service.UserService.MIN_RECCOMEND_FOR_GOLD;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 

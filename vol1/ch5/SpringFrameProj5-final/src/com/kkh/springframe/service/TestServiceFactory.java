@@ -1,4 +1,4 @@
-package com.intheeast.springframe.service;
+package com.kkh.springframe.service;
 
 import javax.sql.DataSource;
 
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
-import com.intheeast.springframe.dao.UserDaoJdbc;
+import com.kkh.springframe.dao.UserDaoJdbc;
 
 @Configuration
 public class TestServiceFactory {
