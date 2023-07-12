@@ -1,12 +1,19 @@
 package com.kkh.springframe.service;
 
-import java.lang.reflect.Proxy;
+import static com.kkh.springframe.service.UserServiceImpl.MIN_LOGCOUNT_FOR_SILVER;
+import static com.kkh.springframe.service.UserServiceImpl.MIN_RECCOMEND_FOR_GOLD;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-
-import javax.sql.DataSource;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,14 +32,6 @@ import org.springframework.transaction.PlatformTransactionManager;
 import com.kkh.springframe.dao.UserDao;
 import com.kkh.springframe.domain.Level;
 import com.kkh.springframe.domain.User;
-import com.kkh.springframe.service.UserServiceTest.TestUserService;
-import com.kkh.springframe.service.UserServiceTest.TestUserServiceException;
-
-import static com.kkh.springframe.service.UserServiceImpl.MIN_LOGCOUNT_FOR_SILVER;
-import static com.kkh.springframe.service.UserServiceImpl.MIN_RECCOMEND_FOR_GOLD;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
-import static org.mockito.Mockito.*;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {TestServiceFactory.class})
