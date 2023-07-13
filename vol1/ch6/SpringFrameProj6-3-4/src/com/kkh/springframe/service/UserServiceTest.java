@@ -197,7 +197,7 @@ public class UserServiceTest {
 		}		
 	}
 	
-	/*
+	/* //Java의 dynamic proxy
 	 ���� 448 ������ �ڵ� ����
 	@Test
 	public void upgradeAllOrNothing() throws Exception {
@@ -241,7 +241,7 @@ public class UserServiceTest {
 		// testUserService�� �����ϱ� ���ؼ���.
 		TxProxyFactoryBean txProxyFactoryBean = 
 				context.getBean("&userService", TxProxyFactoryBean.class);
-		txProxyFactoryBean.setTarget(testUserService);
+		txProxyFactoryBean.setTarget(testUserService);	
 		UserService txUserService = (UserService) txProxyFactoryBean.getObject();
 			
 		userDao.deleteAll();			  

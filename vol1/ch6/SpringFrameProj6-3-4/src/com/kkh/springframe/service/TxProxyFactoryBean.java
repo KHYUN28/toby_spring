@@ -27,8 +27,8 @@ public class TxProxyFactoryBean implements FactoryBean<Object> {
 		this.serviceInterface = serviceInterface;
 	}
 
-	// FactoryBean �������̽� ���� �޼ҵ�
-	// ���̳��� ���Ͻ� ������Ʈ�� �����Ѵ�.
+	// FactoryBean 인터페이스 구현 메소드
+	// 인터페이스를 반환하는 메서드입니다.
 	public Object getObject() throws Exception {
 		TransactionHandler txHandler = new TransactionHandler();
 		txHandler.setTarget(target);
@@ -36,7 +36,7 @@ public class TxProxyFactoryBean implements FactoryBean<Object> {
 		txHandler.setPattern(pattern);
 		Class<? extends TxProxyFactoryBean> whatclass = this.getClass();
 		
-		// Create Dynamic Proxy!!!
+		// Create Dynamic Proxy_!!!
 		return Proxy.newProxyInstance(
 			getClass().getClassLoader(), new Class[] { serviceInterface }, txHandler);
 	}
