@@ -2,7 +2,6 @@ package com.kkh.springframe.service;
 
 import javax.sql.DataSource;
 
-import org.springframework.aop.framework.ProxyFactoryBean;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.aop.support.NameMatchMethodPointcut;
@@ -50,7 +49,7 @@ public class TestServiceFactory {
 		transactionAdvice.setTransactionManager(transactionManager());
 		return transactionAdvice;
 	}
-
+	
 	@Bean
 	public NameMatchMethodPointcut transactionPointcut() {
 		NameMatchMethodPointcut nameMatchMethodPointcut = new NameMatchMethodPointcut();
