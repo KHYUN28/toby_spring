@@ -82,7 +82,8 @@ public class UserDaoTest {
 		assertEquals(dao.getCount(), 0);		
 		
 		Assertions.assertThrows(EmptyResultDataAccessException.class, 
-				() -> {dao.get("unknown_id");});		
+				() -> {dao.get("unknown_id");});	
+		//메서드 호출 구문이라 ; 붙여야함.
 	}	
 	
 //	@Test

@@ -36,7 +36,7 @@ public class TestServiceFactory {
 		return dataSourceTransactionManager;
 	}
 	
-	// aop
+	// AOP
 	//<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" />
 	@Bean
 	  public DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator() {

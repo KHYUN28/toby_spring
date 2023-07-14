@@ -14,7 +14,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = {TestJunit.class})
+@ContextConfiguration(classes = {TestJunit.class}) //run time때 생성
 public class JUnitTest {
 	@Autowired 
 	ApplicationContext context;
