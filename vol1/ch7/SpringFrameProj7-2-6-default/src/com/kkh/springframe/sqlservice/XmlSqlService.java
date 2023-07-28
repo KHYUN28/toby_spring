@@ -22,18 +22,14 @@ public class XmlSqlService implements SqlService {
 	public void setSqlmapFile(String sqlmapFile) {
 		this.sqlmapFile = sqlmapFile;
 	}
-	// Spring IOC 컨테이너 작업이 끝나면 @PostConstruct 호출
-	
+
 	@PostConstruct
 	public void loadSql() {
-		
 		String contextPath = Sqlmap.class.getPackage().getName(); 
-		
 		try {
 			JAXBContext context = JAXBContext.newInstance(contextPath);
 			Unmarshaller unmarshaller = context.createUnmarshaller();
 			InputStream is = UserDao.class.getResourceAsStream(this.sqlmapFile);
-			// InputStream == ByteStream 
 			Sqlmap sqlmap = (Sqlmap)unmarshaller.unmarshal(is);
 
 			for(SqlType sql : sqlmap.getSql()) {
@@ -45,12 +41,11 @@ public class XmlSqlService implements SqlService {
 	}
 
 	public String getSql(String key) throws SqlRetrievalFailureException {
-		
 		String sql = sqlMap.get(key);
-		
 		if (sql == null)  
 			throw new SqlRetrievalFailureException(key + "를 이용해서 SQL을 찾을 수 없습니다");
 		else
 			return sql;
 	}
+
 }
