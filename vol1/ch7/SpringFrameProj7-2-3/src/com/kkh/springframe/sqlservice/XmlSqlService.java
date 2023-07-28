@@ -22,7 +22,8 @@ public class XmlSqlService implements SqlService {
 	public void setSqlmapFile(String sqlmapFile) {
 		this.sqlmapFile = sqlmapFile;
 	}
-
+	// Spring IOC 컨테이너 작업이 끝나면 @PostConstruct 호출
+	
 	@PostConstruct
 	public void loadSql() {
 		String contextPath = Sqlmap.class.getPackage().getName(); 
@@ -30,6 +31,7 @@ public class XmlSqlService implements SqlService {
 			JAXBContext context = JAXBContext.newInstance(contextPath);
 			Unmarshaller unmarshaller = context.createUnmarshaller();
 			InputStream is = UserDao.class.getResourceAsStream(this.sqlmapFile);
+			// InputStream == ByteStream 0과 1로만, BitStream은 
 			Sqlmap sqlmap = (Sqlmap)unmarshaller.unmarshal(is);
 
 			for(SqlType sql : sqlmap.getSql()) {
