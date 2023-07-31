@@ -38,8 +38,7 @@ public abstract class AbstractUpdatableSqlRegistryTest {
 		assertThrows(SqlNotFoundException.class, () -> sqlRegistry.findSql("SQL9999!@#$"));
 		
 	}
-
-	// 키 값 할당되었는지 확인
+	
 	protected void checkFind(String expected1, String expected2, String expected3) {
 		assertEquals(sqlRegistry.findSql("KEY1"), expected1);		
 		assertEquals(sqlRegistry.findSql("KEY2"), expected2);		
@@ -53,7 +52,6 @@ public abstract class AbstractUpdatableSqlRegistryTest {
 		checkFind("SQL1", "Modified2", "SQL3");
 	}
 	
-	// H2 Embedded Test
 	@Test
 	public void updateMulti() {
 		Map<String, String> sqlmap = new HashMap<String, String>();
