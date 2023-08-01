@@ -40,7 +40,7 @@ public abstract class AbstractUpdatableSqlRegistryTest {
 	}
 	
 	protected void checkFind(String expected1, String expected2, String expected3) {
-		assertEquals(sqlRegistry.findSql("KEY1"), expected1);		
+	    assertEquals(sqlRegistry.findSql("KEY1"), expected1);		
 		assertEquals(sqlRegistry.findSql("KEY2"), expected2);		
 		assertEquals(sqlRegistry.findSql("KEY3"), expected3);		
 	}
